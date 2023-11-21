@@ -19,7 +19,7 @@ var root = {
     return 2+2
   },
 };
-
+// stopping on basic types
 var app = express();
 app.use(
   "/graphql",
