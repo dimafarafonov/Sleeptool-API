@@ -6,7 +6,9 @@ var { buildSchema } = require("graphql");
 var schema = buildSchema(`
   type Query {
     hello: String
-    systemAlert: String
+    systemAlert: Int!
+    listType: [String]
+    nullableReturn: Float! 
   }
 `);
 
@@ -16,8 +18,19 @@ var root = {
     return "Hello world!";
   },
   systemAlert: () => {
-    return 2+2
+    return 1; // cannot be null
   },
+  listType: () => {
+    const map = [
+      1,2,3,4,5
+    ];
+
+    return map
+  },
+  nullableReturn: () => {
+    return 1.245325 // cannot be null, but we are fine with float's 
+  }
+
 };
 // stopping on basic types
 var app = express();
