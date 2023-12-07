@@ -21,3 +21,5 @@ const queryByVariable = async () => {
 };
 
 queryByVariable();
+
+// https://www.apollographql.com/docs/react/data/queries/#caching-query-results
